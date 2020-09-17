@@ -1,6 +1,6 @@
-format PE console
+format PE console   ;ожидаемы формат вывода, в данном случае консольный вывод
 
-entry Start
+entry Start         ;точка входа в программу
 
 include 'win32a.inc'
 
@@ -23,27 +23,27 @@ section '.code' code readable executable
         call [printf]
 
         push A
-        push emptyStr
+        push emptyStr  ;вводим в стэк строку и считываем ввод пользователя. Присваиваем значение ссылке А (последняя для вывода из стека)
         call [scanf]
 
-        mov eax, [A]
-        mov ecx, 4
-        mov edx, 0
-        imul eax,2
-        sub eax, 6
-        div ecx
+        mov eax, [A]    ;перемещаем значение по ссылке А в регистр еах
+        mov ecx, 4      ;перемещаем 4 в регистр есх
+        mov edx, 0      ;инициализируем 0 для регистра edx
+        imul eax,2      ;умножаем значение в регистре eax при помощи умножения целых чисел
+        sub eax, 6      ;вычитаем из значения в регистре еах 6
+        div ecx         ;делим значение в регистре еах на значение в регистре есх
 
 
-        push eax
+        push eax        ;остаток от деления в последней операции остается в регистре еах
         push resStr
         call [printf]
 
-        call [getch]
+        call [getch]    ;вызываем комманду getch чтобы программа сразу не закрывалась
 
         push NULL
-        call[ExitProcess]
+        call[ExitProcess]   ;закрываем программу вызовом комманды ExitProcess, класть в стек 0 не обязательно, но без него мовэтон
 
-section '.idata' import data readable
+section '.idata' import data readable        ;импорты комманд из бибилотеки kernel32.dll
 
         library kernel, 'kernel32.dll' ,\
                 msvcrt, 'msvcrt.dll'
