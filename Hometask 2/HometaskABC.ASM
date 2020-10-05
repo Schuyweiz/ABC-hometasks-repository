@@ -28,13 +28,11 @@ section '.code' code readable executable
     start:
     ;1) interact with the user to create array A
         call create_array_A
-    ;2) calculating an average
+    ;2) calculating an average creating array B
         call solution
     ;3)display array A
         call read_array_A
-    ;4)create array B
-       ; call create_array_B
-    ;5) display array B
+    ;4) display array B
         call read_array_B
 
         finish: 
