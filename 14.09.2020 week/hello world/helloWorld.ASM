@@ -9,7 +9,7 @@ section '.data' data readable writable  ;секция предопределенной памяти, помечен
         helloStr db 'Hello world',0
         NULL = 0
 
-section '.code' code readable executable    ;секция кода
+section '.code' code readable writable executable    ;секция кода
 
         start:                      ;точка входа в программу
                 push helloStr       ;помещаем в стек строку с сообщением
