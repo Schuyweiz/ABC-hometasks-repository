@@ -1,0 +1,6 @@
+﻿  hw3.cpp
+C:\Users\kiril\source\repos\hw3\hw3\hw3.cpp(75,21): warning C4244: 'argument': conversion from 'uint64_t' to 'const unsigned int', possible loss of data
+C:\Users\kiril\source\repos\hw3\hw3\hw3.cpp(96,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'uint64_t'
+C:\Users\kiril\source\repos\hw3\hw3\hw3.cpp(96,9): message : consider using '%lld' in the format string
+C:\Users\kiril\source\repos\hw3\hw3\hw3.cpp(96,9): message : consider using '%I64d' in the format string
+  hw3.vcxproj -> C:\Users\kiril\source\repos\hw3\Debug\hw3.exe

@@ -82,7 +82,7 @@ create_array_A:
                 add esp, 8
 
                 mov eax, [temp]       ;retrieving input value to assign it to a register
-                mov [A+ebx*8],eax     ;to the next element we go. For every new elemet we shift by 8 bytes the adress of the memory ref
+                mov [A+ebx*8],ax     ;to the next element we go. For every new elemet we shift by 8 bytes the adress of the memory ref
                 inc ebx               ;increase counter
                 cmp ebx,[N]
                 jne fill_loop_A  ;do until equal
